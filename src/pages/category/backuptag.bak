@@ -1,0 +1,47 @@
+---
+import BlogPostListingLayout from "../../layouts/BlogPostListingLayout.astro";
+
+export async function getStaticPahts() {
+  
+  const posts = await Astro.glob('../*.md'); // returns an array of posts from location specified
+
+  let filteredPosts = new Array;
+
+  posts.forEach((post) => {
+    if (post.frontmatter.tags.includes("malta"))
+      {filteredPosts.push(post)} 
+    })
+
+  filteredPosts.forEach((post) => {
+    console.log(post.frontmatter.title);
+    console.log(post.frontmatter.tags);
+  })
+
+}
+
+---
+<BlogPostListingLayout>
+<div>
+  <h1>Blog posts with malta in tags</h1>
+</div>
+  <div>
+  {filteredPosts.slice(0, 2).map((filteredPost) => (
+    <article>
+      <h2>{filteredPost.frontmatter.title}</h2>
+      <span>{filteredPost.frontmatter.date}</span>
+      <p>{filteredPost.frontmatter.description}</p>
+      <p>{filteredPost.frontmatter.tags}</p>
+      <a href={filteredPost.url}>Read more</a>
+    </article>
+  ))}
+  </div>
+  </BlogPostListingLayout>
+  
+
+
+
+
+
+
+
+

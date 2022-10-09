@@ -1,0 +1,51 @@
+---
+
+import BlogPostListingLayout from "../../layouts/BlogPostListingLayout.astro";
+
+export async function getStaticPaths() {
+  
+  const posts = await Astro.glob('../*.md'); // returns an array of posts from location specified
+
+  let filteredPosts = new Array;
+
+    posts.forEach((post) => {
+    if (post.frontmatter.category == "computers")
+        {filteredPosts.push(post)} 
+        console.log(post.frontmatter.category)
+    })
+
+  return filteredPosts.map((post) => {
+    return {
+      params: {{ category: "writing" },
+              {{category: "computers"}} ,
+      props: { posts }
+      };
+    });
+}
+
+const { filteredPosts } = Astro.props
+const { category } = Astro.params
+
+---
+
+<BlogPostListingLayout>
+  <div>
+  <h1>Category is: {category} </h1>
+
+      <!-- {filteredPosts.map((post) => (
+        <article>
+          <h2>{post.frontmatter.title}</h2>
+          <span>{post.frontmatter.date}</span>
+          <p>{post.frontmatter.description}</p>
+          <p><strong>{post.frontmatter.category}</strong></p>
+          <p>{post.frontmatter.tags}</p>
+          <a href={post.url}>Read more</a>
+        </article>
+      ))} -->
+  </div>
+
+
+  
+    
+
+</BlogPostListingLayout>

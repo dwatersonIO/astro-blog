@@ -1,0 +1,13 @@
+---
+
+
+const posts = await Astro.glob('../*.md'); // returns an array of posts from location specified
+
+
+---
+
+<ul>
+{posts.map((post) => (
+  <li><a href={`/category/${post.frontmatter.category}`}>{post.frontmatter.category}</a></li>  
+  ))}
+</ul>

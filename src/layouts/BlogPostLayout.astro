@@ -1,0 +1,37 @@
+---
+import NavBar from "../components/NavBar.astro";
+const {frontmatter} = Astro.props;
+
+---
+  
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{frontmatter.title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+  <NavBar />    
+
+  <h1>{frontmatter.title}</h1>
+
+  Tags: {frontmatter.tags.map((tag) => (
+    <span>{tag + " "}</span>
+  ))}
+
+  <slot />
+  <button><a href="./">Back to Blog Listing</a></button>
+  </body>
+</html>
+
+
+<style>
+  body { 
+    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    background: #330000);
+    width: 800px;
+    margin: 50px;
+  }
+
+</style>
+
