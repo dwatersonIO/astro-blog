@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Start New Django Project
 slug: new-django
 author: David Waters

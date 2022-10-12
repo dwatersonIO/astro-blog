@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: How Adjust Path in Linux Mint
 slug: mint-path
 author: David Waterson

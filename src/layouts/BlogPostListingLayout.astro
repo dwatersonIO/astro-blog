@@ -1,6 +1,6 @@
 ---
 import NavBar from "../components/NavBar.astro";
-
+import '../styles/global.css';
 ---
   
 <html lang="en">
@@ -8,6 +8,9 @@ import NavBar from "../components/NavBar.astro";
     <meta charset="utf-8">
     <title>Nifmu Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   </head>
   <body>
   <NavBar />    
@@ -18,12 +21,5 @@ import NavBar from "../components/NavBar.astro";
 </html>
 
 
-<style>
-  body { 
-    font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
-    background: #330000);
-    width: 800px;
-    margin: 50px;
-  }
-</style>
+
 

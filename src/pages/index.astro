@@ -1,7 +1,7 @@
 ---
 import BlogPostListingLayout from "../layouts/BlogPostListingLayout.astro";
 
-const posts = await Astro.glob('./*.md'); // returns an array of posts from location specified
+const posts = await Astro.glob('./posts/*.md'); // returns an array of posts from location specified
 
 ---
 
@@ -9,7 +9,7 @@ const posts = await Astro.glob('./*.md'); // returns an array of posts from loca
 <div>
 {posts.slice(0, 10).map((post) => (
   <article>
-    <h2>{post.frontmatter.title}</h2>
+    <h1>{post.frontmatter.title}</h1>
     <span>{post.frontmatter.date}</span>
     <p>{post.frontmatter.description}</p>
     <a href={post.url}>Read more</a>

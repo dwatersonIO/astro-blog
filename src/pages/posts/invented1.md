@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: Another Invented Post
 slug: invented1
 author: David McDonald

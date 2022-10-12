@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: How to Write Markdown Well
 slug: md-explain
 author: David Waterson

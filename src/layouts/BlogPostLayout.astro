@@ -9,13 +9,15 @@ const {frontmatter} = Astro.props;
     <meta charset="utf-8">
     <title>{frontmatter.title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../dist/output.css" rel="stylesheet">
+
   </head>
   <body>
   <NavBar />    
 
   <h1>{frontmatter.title}</h1>
 
-  Tags: {frontmatter.tags.map((tag) => (
+Tags: {frontmatter.tags.map((tag) => (
     <span>{tag + " "}</span>
   ))}
 
@@ -28,7 +30,6 @@ const {frontmatter} = Astro.props;
 <style>
   body { 
     font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
-    background: #330000);
     width: 800px;
     margin: 50px;
   }

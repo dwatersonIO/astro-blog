@@ -2,7 +2,7 @@
 const {frontmatter} = Astro.props;
 
 
-const allPosts = await Astro.glob('../*.md'); // returns an array of posts from location specified
+const allPosts = await Astro.glob('../posts/*.md'); // returns an array of posts from location specified
 
 const alltagsSet = new Set()
  
