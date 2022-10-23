@@ -1,19 +1,35 @@
 ---
-import BlogPostListingLayout from "../layouts/BlogPostListingLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const posts = await Astro.glob('./posts/*.md'); // returns an array of posts from location specified
 
----
 
-<BlogPostListingLayout>
-<div>
-{posts.slice(0, 10).map((post) => (
-  <article>
-    <h1>{post.frontmatter.title}</h1>
-    <span>{post.frontmatter.date}</span>
-    <p>{post.frontmatter.description}</p>
-    <a href={post.url}>Read more</a>
-  </article>
-))}
-</div>
-</BlogPostListingLayout>
+---
+<BaseLayout title="All Posts">
+  
+      {posts.slice(0, 10).map((post) => (
+      <section>
+       
+        <h1>{post.frontmatter.title}</h1>
+        <span><small>{new Date(post.frontmatter.date).toLocaleDateString()}</small></span>
+
+        <h3>{post.frontmatter.tags.map((tag) => (
+          <span class="tag">{tag + " "}</span>))}
+        </h3>
+
+        <h2>{post.frontmatter.description}</h2>
+        <a class="read-more" href={post.url}>Read more</a>
+      </section>
+    ))}
+    
+</BaseLayout>
+
+<style>
+
+section {
+  margin-left: .5em;
+}
+
+
+
+</style>

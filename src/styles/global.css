@@ -18,13 +18,49 @@
     line-height: 1.5;
     background: #f8fafc;
     color: #333;
+    margin-top: 1em;
+    margin-left: 7em;
+    margin-right: 7em;
   }
 
-h1
+  section {
+    margin-left: .5em;
+  }
 
-{color: darkslategray;
+  h1 {
+  color: #0d2432;
+  padding: .5em 0em 0em 0em;
+  font-size: 1.5em;
 }
 
-p {
-  color: mediumslateblue;
+h2 {
+  color: #0d2432;
+  padding: .5em 0em 0em 0em;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+section p {
+  color: #37526d;
+  font-size: 1.1em;
+
+}
+
+h4 {
+  color: green;
+  font-size: 1.5em;
+  
+}
+
+.tag {
+  background-color: white;
+  padding: .2em;
+  border-radius: 5px;
+  border: 1px solid #feb17d;
+  margin-right: .2em;
+
+}
+
+.tag:hover {
+  background-color:#feb17d;
 }

@@ -13,13 +13,12 @@ description: How to add to the path in Linux mint and also make functional in VS
 
 I had installed node.js and now needed to add the bin directory to the path.  
 
-- Make hidden files visible by pressing CTRL h.
-- Open the file .bashrc and add this line to the end:  
+Make hidden files visible by pressing CTRL h.
+Open the file .bashrc and add this line to the end:  
   `export PATH=/home/david/NodeJS/bin:$PATH`
-- Save and make hidden files invisible again with CTRL h
+Save and make hidden files invisible again with CTRL h
 
 I noticed that after Node JS install npm and node were not in the path when running VSCode terminal. To add it I did this:
 
-- I copied PATH from Linux terminal (Echo $PATH)
-- Then copied it to VSCode settings (CTRL ,) and: `Terminal › Integrated › Automation Profile: Linux`
-- 
+I copied PATH from Linux terminal (Echo $PATH)
+Then copied it to VSCode settings (CTRL ,) and: `Terminal › Integrated › Automation Profile: Linux`

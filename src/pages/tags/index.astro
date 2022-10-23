@@ -1,6 +1,5 @@
 ---
-const {frontmatter} = Astro.props;
-
+import BaseLayout from "./../../layouts/BaseLayout.astro";
 
 const allPosts = await Astro.glob('../posts/*.md'); // returns an array of posts from location specified
 
@@ -13,17 +12,29 @@ allPosts.map(post => {
 const allTags = Array.from(alltagsSet);
 
 
-
 ---
-
+<BaseLayout title="All Tags">
+<section>
+  <h1>All Tags</h1>
 <ul>
 {allTags.map((tag) => (
-  <li>
-    <a href={`/tags/${tag}`}>{tag}</a>
+  <li >
+    <a class="tag" href={`/tags/${tag}`}>{tag}</a>
   </li>
   ))}
 </ul>
 
+</section>
+
+
+</BaseLayout>
+
+<style>
+ul {
+  list-style-type: none;
+}
+
+</style>
 
 
 

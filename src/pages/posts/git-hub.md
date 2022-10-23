@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/BlogPostLayout.astro
+layout: ../../layouts/BlogPostLayout.astro
 title: How to Use Git and GitHub
 slug: git-hub
 author: David Waterson
@@ -11,8 +11,7 @@ tags:
 description: How to push new projects after creating a repo and update existing projects.
 ---
 
-### First time
-
+#### First time   
     git init
     git add .
     git commit -m “my changes”
@@ -35,3 +34,8 @@ If the origin is now different (uploading to different repo) then:
 
     ‘git remote set-url origin https://github.com/dwatersonIO/repo-you-want-name.git’
     git push
+
+<style>
+
+
+</style>
