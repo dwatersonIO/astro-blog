@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: Another Invented Post
-slug: invented1
+slug: example
 author: David McDonald
 date: 2022-08-03
 category: computers

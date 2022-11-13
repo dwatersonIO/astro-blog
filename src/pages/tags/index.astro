@@ -16,19 +16,15 @@ const allTags = Array.from(alltagsSet);
 <BaseLayout title="All Tags">
   <section>
     <h1>All Tags</h1>
-    <ul>
-      {
-        allTags.map((tag) => (
-          <li>
-            <span>
-              <a class="tag" href={`/tags/${tag}`}>
-                {tag}
-              </a>
-            </span>
-          </li>
-        ))
-      }
-    </ul>
+    {
+      allTags.map((tag) => (
+        <span>
+          <a class="tag choose-tag" href={`/tags/${tag}`}>
+            {tag}
+          </a>
+        </span>
+      ))
+    }
   </section>
 </BaseLayout>
 
