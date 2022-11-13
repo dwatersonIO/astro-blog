@@ -1,42 +1,39 @@
 ---
 import BaseLayout from "./../../layouts/BaseLayout.astro";
 
-const allPosts = await Astro.glob('../posts/*.md'); // returns an array of posts from location specified
+const allPosts = await Astro.glob("../posts/*.md"); // returns an array of posts from location specified
 
-const alltagsSet = new Set()
- 
-allPosts.map(post => {
-     post.frontmatter.tags && post.frontmatter.tags.map(tag => alltagsSet.add(tag.toLowerCase()))
- })
+const alltagsSet = new Set();
+
+allPosts.map((post) => {
+  post.frontmatter.tags &&
+    post.frontmatter.tags.map((tag) => alltagsSet.add(tag.toLowerCase()));
+});
 
 const allTags = Array.from(alltagsSet);
-
-
 ---
+
 <BaseLayout title="All Tags">
-<section>
-  <h1>All Tags</h1>
-<ul>
-{allTags.map((tag) => (
-  <li >
-    <a class="tag" href={`/tags/${tag}`}>{tag}</a>
-  </li>
-  ))}
-</ul>
-
-</section>
-
-
+  <section>
+    <h1>All Tags</h1>
+    <ul>
+      {
+        allTags.map((tag) => (
+          <li>
+            <span>
+              <a class="tag" href={`/tags/${tag}`}>
+                {tag}
+              </a>
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </BaseLayout>
 
 <style>
-ul {
-  list-style-type: none;
-}
-
+  ul {
+    list-style-type: none;
+  }
 </style>
-
-
-
-
-

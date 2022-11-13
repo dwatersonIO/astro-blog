@@ -2,26 +2,31 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: Start New Django Project
 slug: new-django
-author: David Waters
+author: David Waterson
 date: 2021-08-03
 category:
 tags:
 - python
-- djano
+- django
 - web
 description: How to get up and running with a new Django site
 ---
 
 ### New virtual environment
-
-    python -m venv venv
-    venv\scripts\activate.bat
+    
+```js
+python -m venv venv
+```
+    WINDOWS: venv\scripts\activate.bat 
+    LINUX: source .venv/bin/activate
 
 ### Install and make project and app
 
-    python -m pip install django
-    django-admin startproject mysite
-    python manage.py startapp blog  
+```Python
+python -m pip install django
+django-admin startproject mysite
+python manage.py startapp blog  
+```
 
 ### Register, run, create admin user
 

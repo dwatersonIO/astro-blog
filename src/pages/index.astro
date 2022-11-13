@@ -1,35 +1,35 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = await Astro.glob('./posts/*.md'); // returns an array of posts from location specified
-
-
+const posts = await Astro.glob("./posts/*.md"); // returns an array of posts from location specified
 ---
-<BaseLayout title="All Posts">
-  
-      {posts.slice(0, 10).map((post) => (
-      <section>
-       
-        <h1>{post.frontmatter.title}</h1>
-        <span><small>{new Date(post.frontmatter.date).toLocaleDateString()}</small></span>
 
-        <h3>{post.frontmatter.tags.map((tag) => (
-          <span class="tag">{tag + " "}</span>))}
-        </h3>
+<BaseLayout title="All Posts">
+  {
+    posts.slice(0, 10).map((post) => (
+      <section>
+        <h1>
+          <a class="title" href={post.url}>
+            {post.frontmatter.title}
+          </a>
+        </h1>
+        <span>
+          <small>{new Date(post.frontmatter.date).toLocaleDateString()}</small>
+        </span>
+
+        {post.frontmatter.tags.map((tag) => (
+          <span class="tag">{tag + " "}</span>
+        ))}
 
         <h2>{post.frontmatter.description}</h2>
-        <a class="read-more" href={post.url}>Read more</a>
+        <a class="read-more" href={post.url}>
+          Read more
+        </a>
       </section>
-    ))}
-    
+    ))
+  }
 </BaseLayout>
 
 <style>
-
-section {
-  margin-left: .5em;
-}
-
-
 
 </style>

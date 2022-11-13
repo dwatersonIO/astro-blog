@@ -11,11 +11,16 @@ tags:
 description: How to push new projects after creating a repo and update existing projects.
 ---
 
-#### First time   
-    git init
-    git add .
-    git commit -m “my changes”
-    git branch -M main
+### First time
+
+```bash
+git init
+git add .
+git commit -m “my changes”
+git branch -M main
+```
+
+ 
 
 ### Create new repo on GitHub
 

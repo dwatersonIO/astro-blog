@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: How to Write Markdown Well
+title: How to Write Markdown
 slug: md-explain
 author: David Waterson
 date: 2022-01-02
