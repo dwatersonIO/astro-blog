@@ -14,11 +14,18 @@ description: How to get up and running with a new Django site
 
 ### New virtual environment
     
-```js
+```
 python -m venv venv
 ```
-    WINDOWS: venv\scripts\activate.bat 
-    LINUX: source .venv/bin/activate
+
+On Windows type:    
+```
+venv\scripts\activate.bat
+```   
+On Linux type::
+```
+source .venv/bin/activate
+```
 
 ### Install and make project and app
 

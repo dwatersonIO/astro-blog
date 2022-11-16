@@ -6,7 +6,7 @@ author: David Waterson
 date: 2021-09-21
 category:
 tags:
-- web
+- tech
 - github
 description: How to push new projects after creating a repo and update existing projects.
 ---

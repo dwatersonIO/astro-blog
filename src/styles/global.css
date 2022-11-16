@@ -14,7 +14,6 @@
   padding: 0;
 }
 
-
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -72,28 +71,25 @@ h3 {
 }
 
 /* tag class is for the tags for each blog */
-.tag.choose-tag {
+.tag {
   color: white;
-  font-weight: 500;
-  font-size: .9em;
+  font-weight: 600;
+  font-size: 1em;
   background-color: #191970;
-  padding: .2em;
-  border-radius: 5px;
-  border: 1px solid #7f7dfe;
+  padding: .3em .3em .3em 0.35em;
+  border-radius: 6px;
   margin-right: .2em;
   text-decoration: none;
-
 }
 
-/* tag-choose for tag listing in tags subdir */
-.tag.choose-tag {
-  margin: 0 .3em 0 0;
+/* tags need more left margin on /tags listing page */
+.choose-tag {
+  margin: 0 .4em 0 0;
 }
 
-.tag.choose-tag:hover {
+.choose-tag:hover {
   background-color: dimgray;
 }
-
 
 small {
   font-size: 1em;
