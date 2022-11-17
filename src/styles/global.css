@@ -72,13 +72,15 @@ h3 {
 
 /* tag class is for the tags for each blog */
 .tag {
-  color: white;
-  font-weight: 600;
+  color: #191970;
+  font-weight: 500;
   font-size: 1em;
-  background-color: #191970;
-  padding: .3em .3em .3em 0.35em;
+  text-align: center;
+  background-color: white;
+  padding: .2em .3em .2em 0.35em;
+  border: 2px solid #191970;
   border-radius: 6px;
-  margin-right: .2em;
+  margin-right: .4em;
   text-decoration: none;
 }
 

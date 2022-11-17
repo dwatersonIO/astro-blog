@@ -7,7 +7,7 @@ date: 2022-01-02
 category: writing
 tags:
 - tech
-- language
+- markdown
 description: A brief summary of Markdown syntax and usage
 
 ---

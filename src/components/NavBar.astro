@@ -1,58 +1,72 @@
 ---
-
 ---
 
 <nav class="navbar">
-  <div class="brand-title"><strong>DW Blog</strong> </div>
-    <div class="div navbar-links">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/tags/">Tags</a></li>
-        <li><a href="#">Portfolio</a></li>
-      </ul>
-    </div>
+  <div class="brand-title"><strong>DW Blog</strong></div>
 
-     
-
+  <div class="div navbar-links">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/tags/">Tags</a></li>
+      <li><a href="#">Portfolio</a></li>
+    </ul>
+  </div>
 </nav>
 
 <style>
+  .navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(101, 49, 199);
+    color: white;
+    border-radius: 7px;
+  }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: grey;
-  color: white;
-  border-radius: 7px;
-}
+  .brand-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    padding: 0.2em;
+    margin: 0 0 0 0.7em;
+  }
 
-.brand-title {
-  font-size: 1.8rem;
-  padding: .2em;
-  margin-left: .7rem;
-}
+  .navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
 
-.navbar-links ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+  .navbar-links li {
+    list-style: none;
+  }
 
-.navbar-links li {
-  list-style: none;
-}
+  .navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    font-size: large;
+  }
 
-.navbar-links li a {
-  text-decoration: none;
-  color: white;
-  padding: 1rem;
+  .navbar-links li a:hover {
+    background-color: #555;
+  }
 
+  @media (max-width: 600px) {
+    .navbar {
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
 
-}
-
-.navbar-links li a:hover {
-  background-color: #555;
-}
+    .brand-title {
+      align-items: left;
+      border: 2px solid blue;
+      padding: 0;
+    }
+  }
 </style>
-

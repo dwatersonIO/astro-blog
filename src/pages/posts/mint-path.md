@@ -7,7 +7,7 @@ date: 2022-03-03
 category: computers
 tags:
 - tech
-- malta
+- linux
 description: How to add to the path in Linux mint and also make functional in VSCODE    
 ---
 
