@@ -1,0 +1,67 @@
+---
+---
+
+<header>
+  <nav class="navbar">
+    <div class="brand-title"><strong>DW Blog</strong></div>
+
+    <div class="nav-list">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tags/">Tags</a></li>
+        <li><a href="#">Portfolio</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    min-height: 10vh;
+    display: flex;
+
+    /* brand to left, space in between then menu to the right */
+    justify-content: space-between;
+
+    /* centre text vertically */
+    align-items: center;
+
+    background-color: rgba(16, 56, 129, 0.801);
+    color: white;
+    border-radius: 7px;
+  }
+
+  .brand-title {
+    flex-direction: column;
+    align-items: left;
+    font-size: 1.5rem;
+    margin: 0 0 0 0.7em;
+  }
+
+  .nav-list ul {
+    display: flex;
+  }
+
+  .nav-list li {
+    list-style: none;
+  }
+
+  .nav-list li a {
+    text-decoration: none;
+    color: white;
+    padding: 0 0.8em 0 0;
+    font-size: large;
+    font-weight: 600;
+  }
+
+  .nav-list li a:hover {
+    color: black;
+  }
+
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+</style>

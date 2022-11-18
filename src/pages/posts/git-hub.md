@@ -8,7 +8,7 @@ category:
 tags:
 - tech
 - github
-description: How to push new projects after creating a repo and update existing projects.
+description: How to initialize new projects with Git then push to GitHub repo.  
 ---
 
 ### First time

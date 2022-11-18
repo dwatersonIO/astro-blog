@@ -13,14 +13,13 @@ const posts = await Astro.glob("./posts/*.md"); // returns an array of posts fro
             {post.frontmatter.title}
           </a>
         </h1>
-        <span>
+        <span class="tag-list ">
           <small>{new Date(post.frontmatter.date).toLocaleDateString()}</small>
+
+          {post.frontmatter.tags.map((tag) => (
+            <span class="tag">{tag}</span>
+          ))}
         </span>
-
-        {post.frontmatter.tags.map((tag) => (
-          <span class="tag">{tag + " "}</span>
-        ))}
-
         <h2>{post.frontmatter.description}</h2>
         <a class="read-more" href={post.url}>
           Read more

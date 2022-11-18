@@ -17,10 +17,9 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
   background: #f8fafc;
   color: #333;
-  margin-top: 1em;
+  margin-top: 1.2em;
   margin-left: 15%;
   margin-right: 15%;
 }
@@ -32,7 +31,7 @@ section {
 h1 {
   color: var(--color-title);
   padding: .5em 0em .1em 0em;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 a.title {
@@ -45,11 +44,15 @@ a.title:hover {
   text-decoration: none;
 }
 
+a.read-more {
+  font-size: .8em;
+}
+
 /* h2 used for description field */
 h2 {
   color: #0d2432;
-  padding: .5em 0em 0em 0em;
-  font-size: 1.2em;
+  padding-top: .5em;
+  font-size: 1em;
   font-weight: 400;
 }
 
@@ -63,38 +66,39 @@ section p {
 /* h3 = blog subheading */
 h3 {
   color: var(--color-subheading);
-  font-size: 1.1em;
   font-weight: 600;
 
   /* 4 values below: top right bottom left */
   padding: .6em 0 .3em 0
 }
 
-/* tag class is for the tags for each blog */
+.tag-list {
+  display: flex;
+  min-height: 20px;
+
+  /* Allow tags to overflow to next line  */
+  flex-wrap: wrap;
+
+  /* Align items to left or if in columns to the top */
+  justify-content: flex-start;
+  gap: .3em;
+}
+
 .tag {
   color: #191970;
-  font-weight: 500;
-  font-size: 1em;
-  text-align: center;
   background-color: white;
-  padding: .2em .3em .2em 0.35em;
-  border: 2px solid #191970;
-  border-radius: 6px;
-  margin: 0 0.4em 2em 0;
+  padding: 0 2px 0 2px;
+  border: 2px solid grey;
+  border-radius: 4px;
   text-decoration: none;
 }
 
-/* tags need more left margin on /tags listing page */
-.choose-tag {
-  margin: 0 .4em 0 0;
-}
-
 .choose-tag:hover {
-  background-color: dimgray;
+  background-color: lightblue
 }
 
 small {
-  font-size: 1em;
-  padding-right: .5em;
+  font-size: .8em;
+  padding-top: .4em;
 
 }
