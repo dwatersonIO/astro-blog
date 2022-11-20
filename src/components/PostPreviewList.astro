@@ -1,8 +1,11 @@
 ---
+import TagsFilter from "../components/TagsFilter.astro";
 const { posts } = Astro.props;
 ---
 
-<section>All tags go here</section>
+<section>
+    <TagsFilter />
+</section>
 {
     posts.slice(0, 20).map((post) => (
         <section>
