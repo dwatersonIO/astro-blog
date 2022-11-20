@@ -1,0 +1,27 @@
+---
+const { posts } = Astro.props;
+---
+
+<section>All tags go here</section>
+{
+    posts.slice(0, 20).map((post) => (
+        <section>
+            <h1>
+                <a class="title" href={post.url}>
+                    {post.frontmatter.title}
+                </a>
+            </h1>
+            <span class="tag-list ">
+                <small>
+                    {new Date(post.frontmatter.date).toLocaleDateString()}
+                </small>
+            </span>
+
+            <h2>{post.frontmatter.description}</h2>
+            <a class="read-more" href={post.url}>
+                Read more
+            </a>
+            <hr />
+        </section>
+    ))
+}
