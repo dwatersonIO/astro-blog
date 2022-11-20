@@ -2,11 +2,15 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const posts = await Astro.glob("./posts/*.md"); // returns an array of posts from location specified
+
+posts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
 ---
 
 <BaseLayout title="All Posts">
   {
-    posts.slice(0, 10).map((post) => (
+    posts.slice(0, 20).map((post) => (
       <section>
         <h1>
           <a class="title" href={post.url}>
@@ -20,10 +24,12 @@ const posts = await Astro.glob("./posts/*.md"); // returns an array of posts fro
             <span class="tag">{tag}</span>
           ))}
         </span>
+
         <h2>{post.frontmatter.description}</h2>
         <a class="read-more" href={post.url}>
           Read more
         </a>
+        <hr />
       </section>
     ))
   }

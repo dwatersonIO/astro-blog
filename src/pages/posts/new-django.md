@@ -14,22 +14,22 @@ description: How to get up and running with a new Django site
 
 ### New virtual environment
     
-```
+```bash
 python -m venv venv
 ```
 
 On Windows type:    
-```
+```shell
 venv\scripts\activate.bat
 ```   
 On Linux type::
-```
+```bash
 source .venv/bin/activate
 ```
 
 ### Install and make project and app
 
-```Python
+```bash
 python -m pip install django
 django-admin startproject mysite
 python manage.py startapp blog  
@@ -45,3 +45,4 @@ then...
 
     python manage.py runserver
     python manage.py createsuperuser
+

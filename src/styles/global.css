@@ -1,9 +1,6 @@
 :root {
   --color-title: black;
-  --color-subheading: black;
   --color-maintext: #333333;
-  --color-primary: #0f172a;
-  --color-secondary: #0ca120;
 }
 
 *,
@@ -17,11 +14,12 @@
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  color: var(--color-maintext);
   background: #f8fafc;
-  color: #333;
   margin-top: .5em;
   margin-left: 15%;
   margin-right: 15%;
+  list-style: none;
 }
 
 section {
@@ -50,22 +48,20 @@ a.read-more {
 
 /* h2 used for description field */
 h2 {
-  color: #0d2432;
   padding-top: .5em;
   font-size: 1em;
   font-weight: 400;
 }
 
 /* blog maintext */
-section p {
-  color: var(--color-maintext);
-  font-size: 1.1em;
+p {
   padding: .5em 0 .5em 0;
+
+
 }
 
 /* h3 = blog subheading */
 h3 {
-  color: var(--color-subheading);
   font-weight: 600;
 
   /* 4 values below: top right bottom left */
