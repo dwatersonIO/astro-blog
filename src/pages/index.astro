@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostPreviewList from "../components/PostPreviewList.astro";
+import TagsFilter from "../components/TagsFilter.astro";
 
 const posts = await Astro.glob("./posts/*.md"); // returns an array of posts from location specified
 
@@ -10,6 +11,7 @@ posts.sort(
 ---
 
 <BaseLayout title="All Posts">
+  <TagsFilter />
   <PostPreviewList posts={posts} />
 </BaseLayout>
 
