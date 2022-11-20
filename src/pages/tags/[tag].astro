@@ -36,13 +36,14 @@ const { filteredPosts } = Astro.props;
     <h1>Blog posts tagged with: {tag}</h1>
 
     <ul>
-      {
+      <PostPreviewList posts={filteredPosts} />
+      <!-- {
         filteredPosts.map((post) => (
           <li>
             <a href={post.url}>{post.frontmatter.title}</a>
           </li>
         ))
-      }
+      } -->
     </ul>
   </section>
 </BaseLayout>
