@@ -33,17 +33,9 @@ const { filteredPosts } = Astro.props;
 ---
 
 <BaseLayout title="All Posts">
-  <TagsFilter />
+  <TagsFilter selectedTag={tag} />
   <PostPreviewList posts={filteredPosts} />
 </BaseLayout>
-
-<!-- <BaseLayout title="DW Blog-Tags">
-  <section>
-    <ul>
-      <PostPreviewList posts={filteredPosts} />
-    </ul>
-  </section>
-</BaseLayout> -->
 
 <style>
   ul {

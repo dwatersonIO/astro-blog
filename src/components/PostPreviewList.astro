@@ -13,6 +13,9 @@ const { posts } = Astro.props;
             <span class="tag-list ">
                 <small>
                     {new Date(post.frontmatter.date).toLocaleDateString()}
+                    {post.frontmatter.tags.map((tag) => (
+                        <span class="tag">{tag}</span>
+                    ))}
                 </small>
             </span>
 
