@@ -3,7 +3,7 @@
 
 <header>
   <nav class="navbar">
-    <div class="brand-title"><strong>DW Blog</strong></div>
+    <div class="brand-title"><strong>Advisor Wanted</strong></div>
 
     <div class="nav-list">
       <ul>
@@ -17,7 +17,7 @@
 
 <style>
   .navbar {
-    min-height: 8vh;
+    min-height: 10vh;
     display: flex;
 
     /* brand to left, space in between then menu to the right */
@@ -25,18 +25,16 @@
 
     /* centre text vertically */
     align-items: center;
-
-    background-color: rgba(63, 117, 216, 0.918);
-    color: white;
     border-radius: 5px;
-    margin-bottom: 5px;
   }
 
   .brand-title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-brand-title);
     flex-direction: column;
     align-items: left;
-    font-size: 1.5rem;
-    margin: 0 0 0 0.7em;
+    font-size: 2em;
+    margin: 0 0 0 0.25em;
   }
 
   .nav-list ul {
@@ -49,7 +47,7 @@
 
   .nav-list li a {
     text-decoration: none;
-    color: white;
+    color: var(--color-brand-title);
     padding: 0 0.8em 0 0;
     font-size: large;
     font-weight: 600;
@@ -61,7 +59,7 @@
 
   @media (max-width: 600px) {
     .navbar {
-      min-height: 12vh;
+      min-height: 8vh;
       flex-direction: column;
       justify-content: space-evenly;
     }
