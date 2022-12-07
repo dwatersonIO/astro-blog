@@ -1,0 +1,81 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: Import a CSV file to a Database in Django
+slug: django-db
+author: David Waterson
+date: 2022-12-07
+category:
+tags:
+- django
+- python
+description: How to get a csv file into a sqlite db in Django
+---
+
+### Create the Django Model
+
+```python
+from django.db import models
+from django.utils import timezone
+
+# Create your models here.
+
+class TeamDict(models.Model):
+    expression = models.CharField(max_length=255)
+    translation = models.CharField(max_length=255)
+    definition = models.TextField()
+```
+
+### Use a Management Command
+
+Make folder /management/commands/populate_database.py
+
+```python
+import csv
+from django.core.management.base import BaseCommand
+from django.conf import settings
+from pages.models import TeamDict
+
+class Command(BaseCommand):
+    help = 'Load data from csv file'
+
+    def handle(self, *args, **kwargs):
+        # Clear db
+        if TeamDict.objects.count()>0:
+            TeamDict.objects.all().delete()
+        
+        DATA_FILE = settings.BASE_DIR / 'data' / 'dict.csv'
+        assert DATA_FILE.exists()
+
+        with open(DATA_FILE, 'r') as csvfile:
+            reader = csv.DictReader(csvfile)
+            db_rows = []
+            for row in reader:
+                db_rows.append(TeamDict(
+                    expression=row['expression'],
+                    translation=row['translation'],
+                    definition=row['definition']
+                ))
+            TeamDict.objects.bulk_create(db_rows,batch_size=1000)
+        
+```
+
+### Run the managment command
+
+```bash
+python manage.py populate_database.py
+```
+
+### Check the entries from the Djano shell
+
+```python
+python manage.py shell
+from .models import TeamDict
+TeamDict.objects.count()
+```
+This will tell you number of entries in the db
+
+
+<style>
+
+
+</style>
