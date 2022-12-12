@@ -20,25 +20,33 @@ git commit -m “my changes”
 git branch -M main
 ```
 
- 
-
 ### Create new repo on GitHub
 
-    git remote add origin https://github.com/github username/repo-name.git
+```bash
+git remote add origin https://github.com/github username/repo-name.git
+```
 
 Note: In this case origin is just term used by convention to represent the remote location.
-If you want to check what current orgin is type: git remote -v.
+If you want to check what current orgin is type:
+
+```bash
+git remote -v.
 git push -u origin main
+```
 
 ### To update later:
 
-    git add .
-    git commit -m “my other changes”
+```bash
+git add .
+git commit -m “my other changes”
+```
 
-If the origin is now different (uploading to different repo) then:
+### If the origin is now different (uploading to different repo) then:
 
-    ‘git remote set-url origin https://github.com/dwatersonIO/repo-you-want-name.git’
-    git push
+```bash
+git remote set-url origin https://github.com/dwatersonIO/repo-you-want-name.git
+git push
+```
 
 <style>
 

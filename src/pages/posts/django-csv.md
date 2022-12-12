@@ -65,7 +65,7 @@ class Command(BaseCommand):
 python manage.py populate_database.py
 ```
 
-### Check the entries from the Djano shell
+### Check the entries from the Django shell
 
 ```python
 python manage.py shell
