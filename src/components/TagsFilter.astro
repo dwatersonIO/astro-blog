@@ -1,7 +1,7 @@
 ---
 import TagChip from "./TagChip.astro";
 
-const allPosts = await Astro.glob("../pages/posts/*.md"); // returns an array of posts from location specified
+const allPosts = await Astro.glob("../pages/posts/*.mdx"); // returns an array of posts from location specified
 
 const alltagsSet = new Set();
 
