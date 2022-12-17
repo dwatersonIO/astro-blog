@@ -4,7 +4,7 @@ import PostPreviewList from "./../../components/PostPreviewList.astro";
 import TagsFilter from "./../../components/TagsFilter.astro";
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob("../posts/*.md"); // returns an array of posts from location specified
+  const allPosts = await Astro.glob("../posts/*.mdx"); // returns an array of posts from location specified
 
   const allTags = new Set();
 

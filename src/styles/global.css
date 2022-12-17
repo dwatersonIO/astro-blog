@@ -107,3 +107,8 @@ small {
   padding-top: .4em;
 
 }
+
+.astro-code {
+  border-radius: 3px;
+  padding: 5px;
+}
