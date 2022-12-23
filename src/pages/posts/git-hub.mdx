@@ -6,22 +6,21 @@ author: David Waterson
 date: 2021-09-21
 category:
 tags:
-- tech
 - github
 description: How to initialize new projects with Git then push to GitHub repo.  
 ---
 
-### First time
+## First time
 
 
-```shell
+```bash
 git init
 git add .
 git commit -m “my changes”
 git branch -M main
 ```
 
-### Create new repo on GitHub
+## Create new repo on GitHub
 
 ```bash
 git remote add origin https://github.com/github username/repo-name.git
@@ -35,21 +34,17 @@ git remote -v.
 git push -u origin main
 ```
 
-### To update later:
+## To update later:
 
 ```bash
 git add .
 git commit -m “my other changes”
 ```
 
-### If the origin is now different (uploading to different repo) then:
+## If the origin is now different (uploading to different repo) then:
 
 ```bash
 git remote set-url origin https://github.com/dwatersonIO/repo-you-want-name.git
 git push
 ```
 
-<style>
-
-
-</style>
