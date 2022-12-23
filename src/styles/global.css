@@ -80,9 +80,9 @@ h3 {
   margin-top: .5em;
   color: white;
   border-radius: 3px;
-  padding: .3em;
+  padding: .5em;
   /* color: var(--color-description); */
-  background-color: var(--color-accent);
+  background-color: var(--color-tag);
 
 
 }
@@ -118,7 +118,7 @@ p {
   border: 1.5px solid var(--color-accent);
   text-decoration: none;
   margin-right: 4px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .tag {
