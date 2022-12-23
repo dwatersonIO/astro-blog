@@ -1,17 +1,16 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: Import a CSV file to a Database in Django
-slug: django-db
 author: David Waterson
 date: 2022-12-07
 category:
 tags:
 - django
 - python
-description: How to get a csv file into a sqlite db in Django
+description: How to import a csv file into a database in Django 
 ---
 
-### Create the Django Model
+## Create the Django Model
 
 ```python
 from django.db import models
@@ -25,7 +24,7 @@ class TeamDict(models.Model):
     definition = models.TextField()
 ```
 
-### Use a Management Command
+## Use a Management Command
 
 Make folder /management/commands/populate_database.py
 
@@ -59,13 +58,13 @@ class Command(BaseCommand):
         
 ```
 
-### Run the managment command
+## Run the managment command
 
 ```bash
 python manage.py populate_database.py
 ```
 
-### Check the entries from the Django shell
+## Check the entries from the Django shell
 
 ```python
 python manage.py shell
@@ -75,7 +74,3 @@ TeamDict.objects.count()
 This will tell you number of entries in the db
 
 
-<style>
-
-
-</style>

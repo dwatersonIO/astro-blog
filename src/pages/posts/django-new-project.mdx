@@ -12,7 +12,7 @@ tags:
 description: How to get up and running with a new Django site
 ---
 
-### New virtual environment
+## New virtual environment
     
 ```bash
 python -m venv venv
@@ -27,7 +27,7 @@ On Linux type::
 source .venv/bin/activate
 ```
 
-### Install and make project and app
+## Install and make project and app
 
 ```bash
 python -m pip install django
@@ -35,14 +35,18 @@ django-admin startproject mysite
 python manage.py startapp blog  
 ```
 
-### Register, run, create admin user
+## Register, run, create admin user
 
 To register app in settings.py add:
 
-    ‘blog.apps.BlogConfig’,
+```
+[name of app].apps.[name of app]BlogConfig
+```
 
 then...
 
-    python manage.py runserver
-    python manage.py createsuperuser
+```bash
+python manage.py runserver
+python manage.py createsuperuser
+```
 

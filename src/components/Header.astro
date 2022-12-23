@@ -3,7 +3,9 @@
 
 <header>
   <nav class="navbar">
-    <div class="brand-title"><strong>Advisor Wanted</strong></div>
+    <div class="brand-title">
+      <strong><a href="/">Advisor Wanted</a></strong>
+    </div>
 
     <div class="nav-list">
       <ul>
@@ -17,7 +19,7 @@
 
 <style>
   .navbar {
-    min-height: 10vh;
+    padding: 0.6em 0 0.6em 0em;
     display: flex;
 
     /* brand to left, space in between then menu to the right */
@@ -26,15 +28,17 @@
     /* centre text vertically */
     align-items: center;
     border-radius: 5px;
+    background-color: var(--color-header-background);
   }
 
-  .brand-title {
+  .brand-title a {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--color-brand-title);
     flex-direction: column;
     align-items: left;
-    font-size: 2em;
-    margin: 0 0 0 0.25em;
+    font-size: 2.3em;
+    padding: 0 0 0 0.4em;
+    text-decoration: none;
   }
 
   .nav-list ul {
@@ -54,6 +58,10 @@
   }
 
   .nav-list li a:hover {
+    color: black;
+  }
+
+  .brand-title a:hover {
     color: black;
   }
 

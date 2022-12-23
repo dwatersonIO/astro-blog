@@ -15,16 +15,10 @@ const allTags = Array.from(alltagsSet);
 const { selectedTag } = Astro.props;
 ---
 
-<section>
-    <div class="tag-list">
-        {
-            allTags.map((tag) => (
-                <TagChip nameOfTag={tag} selected={tag === selectedTag} />
-            ))
-        }
-    </div>
-</section>
-
-<style>
-
-</style>
+<div class="tag-list tag-list-header">
+    {
+        allTags.map((tag) => (
+            <TagChip nameOfTag={tag} selected={tag === selectedTag} />
+        ))
+    }
+</div>
