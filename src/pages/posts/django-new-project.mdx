@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: Start New Django Project
+title: Start a New Django Project
 slug: new-django
 author: David Waterson
 date: 2021-08-03
@@ -8,12 +8,11 @@ category:
 tags:
 - python
 - django
-description: How to get up and running with a new Django site
+description: Getting started with a new Django project involves making a new virtual environment, installing Django and some other boilerplate commands. Learn how to get up and running.  
 ---
 
 ## New virtual environment
-    
-```bash
+```shell
 python -m venv venv
 ```
 
@@ -42,10 +41,14 @@ To register app in settings.py add:
 [name of app].apps.[name of app]BlogConfig
 ```
 
-then...
+You will need a superuser so you can access the Django admin system. This command will take you through creating one.
 
 ```bash
-python manage.py runserver
 python manage.py createsuperuser
 ```
 
+You are now ready to start the Django server and get started.
+
+```bash
+python manage.py runserver
+```

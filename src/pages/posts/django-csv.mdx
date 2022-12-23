@@ -7,7 +7,7 @@ category:
 tags:
 - django
 - python
-description: How to import a csv file into a database in Django 
+description: Its common to have data from another source in csv format that you want to process with Django. But perhaps you do not want all the columns. 
 ---
 
 ## Create the Django Model
@@ -71,6 +71,6 @@ python manage.py shell
 from .models import TeamDict
 TeamDict.objects.count()
 ```
-This will tell you number of entries in the db
+This will tell you number of entries in the db so you can verify all the records were imported as expected.
 
 
