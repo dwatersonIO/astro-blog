@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="TypeScript">
+    <section>
+        <h1>TypeScript Testing</h1>
+
+        <div>
+            <span id="hi" data-test="This is a test">Hi</span>
+            <span id="bye">Bye</span>
+        </div>
+
+        <script module>
+            const body = document.body;
+            const div = document.querySelector("div");
+            const spanHi = document.querySelector("#hi");
+            const spanBye = document.querySelector("#bye");
+
+            console.log(spanHi.dataset);
+        </script>
+    </section>
+</BaseLayout>
+
+<style>
+
+</style>
