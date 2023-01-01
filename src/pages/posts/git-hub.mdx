@@ -31,16 +31,12 @@ First make the repo on GitHub then add the remote origin as below:
 git remote add origin https://github.com/[github username]/[repo-name].git
 ```
 Now we can push the files to the GitHuB repo. First check what the current `origin` is set to. Note: `origin` is just term used by convention to represent the remote location. 
-
 `git remote -v`
-
 If that confirms you are using the remote repo (origin) you intended then you can push the changed files there:
-
 `git push -u origin main`
 
-If you have no `origin` set then you specify it as follows:
-
-`git remote set-url origin https://github.com/github username]/[repo-name].git'
+If you have no `origin` set then you specify it as follows:    
+`git remote set-url origin https://github.com/github username]/[repo-name].git`
 
 
 ## Making Another Commit
@@ -55,16 +51,10 @@ git push
 
 ## Cloning a Repo from GitHub
 
-Copy the url for the repo in GitHuB. Make an empty folder where you want to place the project then 
-
+Copy the url for the repo in GitHuB. Make an empty folder where you want to place the project then:    
 `git clone https://github.com/[git username/[name of repo] .`
 
-Notice the period at the end. This will ensure the clone command does not command a subfolder with the name of the repo. For this to work you need to have an empty folder.
-
-Then setup you virtual enviroment as normal
-
-`python -m venv venv'
-
+Notice the period at the end. This will ensure the clone command does not command a subfolder with the name of the repo. For this to work you need to have an empty folder. Then setup you virtual enviroment as normal.
 
 
 
