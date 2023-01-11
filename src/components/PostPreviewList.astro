@@ -22,10 +22,12 @@ const { posts } = Astro.props;
                 </span>
             </div>
 
-            <h3>{post.frontmatter.description}</h3>
-            <a class="read-more" href={post.url}>
-                Read more
-            </a>
+            <h3>
+                {post.frontmatter.description}{" "}
+                <a class="read-more" href={post.url}>
+                    Read more...
+                </a>
+            </h3>
         </section>
     ))
 }
