@@ -36,11 +36,7 @@ section {
 
 h1 {
   color: var(--color-title);
-  /* padding: 1em 0em .1em 0em; */
   font-size: 1.3em;
-  padding-left: .2em;
-  padding-right: .5em;
-  border-left: 3px solid var(--color-brand-title);
 }
 
 h1 a {
