@@ -7,20 +7,18 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout>
   <TagsFilter />
-  <section>
-    <div class="blog-title">
-      <h1>{frontmatter.title}</h1>
-      <small>
-        {
-          frontmatter.tags.map((tag) => (
-            <span class="tag-outline">{tag + " "}</span>
-          ))
-        }
-      </small>
-    </div>
+  <div class="container">
+    <h1>{frontmatter.title}</h1>
+    <small>
+      {
+        frontmatter.tags.map((tag) => (
+          <span class="tag-outline">{tag + " "}</span>
+        ))
+      }
+    </small>
     <h3>{frontmatter.description}</h3>
     <slot />
-  </section>
+  </div>
 </BaseLayout>
 
 <style>

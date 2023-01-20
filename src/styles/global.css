@@ -1,14 +1,12 @@
 :root {
-  --color-title: black;
-  --color-maintext: #333333;
-  --color-header-background: hsl(229, 16%, 86%);
+  --color-brand-title: #ff5e00;
+  --color-title-hover: grey;
+  --color-header-background: #eee7f4;
   --color-accent: grey;
-  --color-brand-title: #131d729d;
-  --color-title-hover: #2c3e50;
   --color-tag-hover: white;
   --color-tag: #2c3e50;
   --color-description: black;
-  --color-description-bg: #e1e3e7f5;
+  --color-description-bg: #e8ebf1f5;
 }
 
 *,
@@ -27,10 +25,7 @@ body {
   margin-left: 15%;
   margin-right: 15%;
   list-style: none;
-}
-
-section {
-  margin-left: .5em;
+  text-decoration: none;
 }
 
 hr {
@@ -39,26 +34,17 @@ hr {
 }
 
 h1 {
-  color: var(--color-title);
+  color: var(--color-brand-title);
   font-weight: 600;
   font-size: 1.3em;
 }
 
 h1 a {
-  margin-top: 1em;
-}
-
-.blog-title {
-  margin-top: 1em;
-}
-
-a.title {
+  color: var(--color-brand-title);
   text-decoration: none;
-  color: var(--color-title);
-
 }
 
-a.title:hover {
+h1 a:hover {
   color: var(--color-title-hover);
   text-decoration: none;
 }
@@ -68,7 +54,6 @@ h2 {
   margin: .8em .5em .2em 0;
   font-weight: 500;
   font-size: 1.2em;
-
 }
 
 /* h3 used for description field */
