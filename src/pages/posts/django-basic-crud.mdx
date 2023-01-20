@@ -31,7 +31,6 @@ class Note(models.Model):
     ))
     date_created = models.DateTimeField(auto_now=True)
 
-
     def __str__(self):
         return self.text
 ```
@@ -62,7 +61,6 @@ from notes import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('notes.urls'))
-
 ]
 ```
 You can see only three url patterns are needed for all operations. The first one `index` will be a list of all the records. Then `update_note` will take care of updating and details aleady saved. Finally the `delete_note` will obvious do as it says also.

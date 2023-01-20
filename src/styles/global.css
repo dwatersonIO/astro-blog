@@ -1,14 +1,14 @@
 :root {
   --color-title: black;
   --color-maintext: #333333;
-  --color-header-background: #d5d8dc;
+  --color-header-background: hsl(231, 7%, 79%);
   --color-accent: grey;
-  --color-brand-title: #e74c3c;
+  --color-brand-title: #5019e7;
   --color-title-hover: #2c3e50;
   --color-tag-hover: white;
   --color-tag: #2c3e50;
   --color-description: black;
-  --color-description-bg: #d5d8dc;
+  --color-description-bg: #f2f0f5f5;
 }
 
 *,
@@ -33,6 +33,10 @@ section {
   margin-left: .5em;
 }
 
+hr {
+  margin-top: 2em;
+  margin-bottom: .5em;
+}
 
 h1 {
   color: var(--color-title);
