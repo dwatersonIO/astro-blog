@@ -52,7 +52,7 @@ h1 a:hover {
 /* h2 = blog subheading */
 h2 {
   margin: .8em .5em .2em 0;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.2em;
 }
 
@@ -68,6 +68,14 @@ h3 {
   padding: .4em;
   color: var(--color-description);
   background-color: var(--color-description-bg);
+}
+
+
+h4 {
+  margin: .8em .5em .2em 0;
+  font-weight: 500;
+  font-size: 1.2em;
+  padding-bottom: .5em;
 }
 
 a.read-more {

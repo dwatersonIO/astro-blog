@@ -1,7 +1,7 @@
 ---
 const { posts } = Astro.props;
 ---
-<div class="container">
+<section class="container">
 {
     posts.slice(0, 100).map((post) => (
            <h1>
@@ -26,5 +26,4 @@ const { posts } = Astro.props;
             <hr />
     ))
 }
-<p>TEST</p>
-</div>
+</section>
