@@ -22,19 +22,31 @@
   </nav>
 
   <script>
-    const LS_THEME = 'theme'    
-    let themeChoice = localStorage.getItem(LS_THEME) || 'light'
+    const LS_THEME = 'astro.theme'    
+    let selectedTheme = localStorage.getItem(LS_THEME) || 'light' // check if setting saved, if not light
     
-    document.documentElement.setAttribute("data-theme", themeChoice)
+    document.documentElement.setAttribute("data-theme", selectedTheme)
 
     const themeChangeButton = document.querySelector('[data-theme-change]')
     
     themeChangeButton.addEventListener('click', e => {
-      document.documentElement.setAttribute("data-theme", "dark");
-      let themeChoice = "dark"
-      localStorage.setItem(LS_THEME, themeChoice)
-      console.log(themeChoice)
+      changeTheme(selectedTheme)
     })
+
+    function changeTheme(selectedTheme) {
+      if ( selectedTheme == 'light') {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem(LS_THEME, 'dark')
+     
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem(LS_THEME, 'light')
+     
+      }
+           
+
+}
+
 
      </script>
     

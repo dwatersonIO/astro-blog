@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --brand-hue: 236deg;
   --brand-sat: 100%;
   --brand-lit: 50%;
@@ -26,7 +26,7 @@
     
   --bg-high: hsl(272, 37%, 90%);
   --text: #2c3e50;
-}
+} */
 
 [data-theme="light"] {
   --brand-hue: 236deg;
