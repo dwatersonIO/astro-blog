@@ -1,4 +1,6 @@
 ---
+
+
 ---
 
 <header>
@@ -13,10 +15,32 @@
         <li><a href="/tags/">Tags</a></li>
         <li><a href="/react/">React</a></li>
         <li><a href="/javascript/">Javascript</a></li>
+        <li><a href="/" data-theme-change>Color Choice</a></li>
       </ul>
+
     </div>
   </nav>
+
+  <script>
+    const LS_THEME = 'theme'    
+    let themeChoice = localStorage.getItem(LS_THEME) || 'light'
+    
+    document.documentElement.setAttribute("data-theme", themeChoice)
+
+    const themeChangeButton = document.querySelector('[data-theme-change]')
+    
+    themeChangeButton.addEventListener('click', e => {
+      document.documentElement.setAttribute("data-theme", "dark");
+      let themeChoice = "dark"
+      localStorage.setItem(LS_THEME, themeChoice)
+      console.log(themeChoice)
+    })
+
+     </script>
+    
+
 </header>
+
 
 <style>
   .navbar {

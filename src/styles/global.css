@@ -2,19 +2,16 @@
   --brand-hue: 236deg;
   --brand-sat: 100%;
   --brand-lit: 50%;
-
   --brand: hsl(
     var(--brand-hue) 
     var(--brand-sat) 
     var(--brand-lit) 
   );
-
   --soft-brand: hsl(
     var(--brand-hue) 
     calc(var(--brand-sat) - 30%) 
     calc(var(--brand-lit) + 10%)
   );
-
   --dark-brand: hsl(
     var(--brand-hue) 
     var(--brand-sat) 
@@ -28,10 +25,68 @@
   );
     
   --bg-high: hsl(272, 37%, 90%);
+  --text: #2c3e50;
+}
+
+[data-theme="light"] {
+  --brand-hue: 236deg;
+  --brand-sat: 100%;
+  --brand-lit: 50%;
+  --brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    var(--brand-lit) 
+  );
+  --soft-brand: hsl(
+    var(--brand-hue) 
+    calc(var(--brand-sat) - 30%) 
+    calc(var(--brand-lit) + 10%)
+  );
+  --dark-brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    calc(var(--brand-lit) - 20%)
+  );
+
+  --trans-brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    calc(var(--brand-lit) / .5)
+  );
+    
+  --bg-high: hsl(272, 37%, 90%);
+  --text: #2c3e50;
+}
 
 
-  --color-tag: #2c3e50;
-  --text: black;
+[data-theme="dark"] {
+  --brand-hue: 5deg;
+  --brand-sat: 88%;
+  --brand-lit: 37%;
+  --brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    var(--brand-lit) 
+  );
+  --soft-brand: hsl(
+    var(--brand-hue) 
+    calc(var(--brand-sat) - 30%) 
+    calc(var(--brand-lit) + 10%)
+  );
+  --dark-brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    calc(var(--brand-lit) - 20%)
+  );
+
+  --trans-brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    calc(var(--brand-lit) / .5)
+  );
+    
+  --bg-high: hsl(272, 37%, 90%);
+  --text: #2c3e50;
 }
 
 *,
@@ -41,6 +96,7 @@
   margin: 0;
   padding: 0;
 }
+
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -143,12 +199,13 @@ p {
   text-decoration: none;
   margin-right: 4px;
   font-weight: 400;
+  font-size: 1rem;
 }
 
 .tag {
   color: white;
   padding: 4px 5px 4px 5px;
-  background-color: var(--color-tag);
+  background-color: var(--text);
   border-radius: 4px;
   text-decoration: none;
   margin-left: 5px;
@@ -166,7 +223,7 @@ p {
 }
 
 small {
-  font-size: .8em;
+  font-size: .9em;
 
 }
 
