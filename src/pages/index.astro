@@ -18,7 +18,9 @@ posts.sort(
 
   <script>
 
-  document.documentElement.setAttribute("data-theme", "dark");
+const LS_THEME = 'astro.theme'    
+let selectedTheme = localStorage.getItem(LS_THEME) || 'light' // check if setting saved, if not light
+document.documentElement.setAttribute("data-theme", selectedTheme)
 
     // const LS_COLOR = 'color'
     // let colorChoice = JSON.parse(localStorage.getItem(LS_COLOR)) || {hue:'236deg', sat:'100%', lit:'50%'}
