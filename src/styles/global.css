@@ -1,12 +1,37 @@
 :root {
-  --color-brand-title: #ff5e00;
-  --color-title-hover: grey;
-  --color-header-background: #eee7f4;
-  --color-accent: grey;
-  --color-tag-hover: white;
+  --brand-hue: 236deg;
+  --brand-sat: 100%;
+  --brand-lit: 50%;
+
+  --brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    var(--brand-lit) 
+  );
+
+  --soft-brand: hsl(
+    var(--brand-hue) 
+    calc(var(--brand-sat) - 30%) 
+    calc(var(--brand-lit) + 10%)
+  );
+
+  --dark-brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    calc(var(--brand-lit) - 20%)
+  );
+
+  --trans-brand: hsl(
+    var(--brand-hue) 
+    var(--brand-sat) 
+    calc(var(--brand-lit) / .5)
+  );
+    
+  --bg-high: hsl(272, 37%, 90%);
+
+
   --color-tag: #2c3e50;
-  --color-description: black;
-  --color-description-bg: #e8ebf1f5;
+  --text: black;
 }
 
 *,
@@ -34,18 +59,18 @@ hr {
 }
 
 h1 {
-  color: var(--color-brand-title);
+  color: var(--brand);
   font-weight: 600;
   font-size: 1.3em;
 }
 
 h1 a {
-  color: var(--color-brand-title);
+  color: var(--brand);
   text-decoration: none;
 }
 
 h1 a:hover {
-  color: var(--color-title-hover);
+  color: var(--soft-brand);
   text-decoration: none;
 }
 
@@ -66,8 +91,8 @@ h3 {
   color: white;
   border-radius: 3px;
   padding: .4em;
-  color: var(--color-description);
-  background-color: var(--color-description-bg);
+  color: var(--text);
+  background-color: var(--bg-high);
 }
 
 
@@ -79,7 +104,7 @@ h4 {
 }
 
 a.read-more {
-  color: var(--color-brand-title);
+  color: var(--soft-brand);
   font-weight: 600;
   font-size: 1em;
 }
@@ -106,15 +131,15 @@ p {
 
 /* used for col background of header component and tag-list underneath header */
 .tag-list-header {
-  background-color: var(--color-header-background);
+  background-color: var(--bg-high);
   padding: 0em 0 1em .5em;
   border-radius: 0 0 5px 5px;
 }
 
 .tag-outline {
-  padding: 3px 3px 3px 4px;
+  padding: 4px 8px 4px 8px;
   border-radius: 4px;
-  border: 1.5px solid var(--color-accent);
+  border: 1px solid var(--brand);
   text-decoration: none;
   margin-right: 4px;
   font-weight: 400;
@@ -131,12 +156,12 @@ p {
 }
 
 .tag-selected {
-  background-color: var(--color-accent);
+  background-color: var(--soft-brand);
   color: white;
 }
 
 .selectable-tag:hover {
-  background-color: var(--color-accent);
+  background-color: var(--soft-brand);
   color: white;
 }
 
