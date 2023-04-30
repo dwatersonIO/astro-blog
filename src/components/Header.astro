@@ -15,38 +15,34 @@
         <li><a href="/tags/">Tags</a></li>
         <li><a href="/react/">React</a></li>
         <li><a href="/javascript/">Javascript</a></li>
-        <li><a href="/" data-theme-change>Color Choice</a></li>
-      </ul>
 
+      </ul>
+      <button data-theme-change>Color</button>
     </div>
   </nav>
 
   <script>
     const LS_THEME = 'astro.theme'    
     let selectedTheme = localStorage.getItem(LS_THEME) || 'light' // check if setting saved, if not light
-    
     document.documentElement.setAttribute("data-theme", selectedTheme)
 
     const themeChangeButton = document.querySelector('[data-theme-change]')
     
     themeChangeButton.addEventListener('click', e => {
-      changeTheme(selectedTheme)
-    })
+      let selectedTheme = localStorage.getItem(LS_THEME)      
 
-    function changeTheme(selectedTheme) {
       if ( selectedTheme == 'light') {
         document.documentElement.setAttribute("data-theme", "dark");
-        localStorage.setItem(LS_THEME, 'dark')
+        let selectedTheme = 'dark'
+        localStorage.setItem(LS_THEME, selectedTheme)
      
       } else {
         document.documentElement.setAttribute("data-theme", "light");
-        localStorage.setItem(LS_THEME, 'light')
-     
+        let selectedTheme = 'light'
+        localStorage.setItem(LS_THEME, selectedTheme)
       }
-           
-
-}
-
+      console.log(selectedTheme)
+    })
 
      </script>
     
