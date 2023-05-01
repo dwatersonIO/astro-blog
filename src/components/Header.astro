@@ -22,8 +22,16 @@
   </nav>
 
   <script>
-    const LS_THEME = 'astro.theme'    
-    let selectedTheme = localStorage.getItem(LS_THEME) || 'light' // check if setting saved, if not light
+    const LS_THEME = 'astro.theme'
+    let selectedTheme    
+    
+    if (localStorage.getItem(LS_THEME)) {
+      selectedTheme = localStorage.getItem(LS_THEME)
+    } else {
+      selectedTheme = 'light'
+      localStorage.setItem(LS_THEME, selectedTheme)
+    }
+
     document.documentElement.setAttribute("data-theme", selectedTheme)
 
     const themeChangeButton = document.querySelector('[data-theme-change]')
@@ -32,16 +40,15 @@
       let selectedTheme = localStorage.getItem(LS_THEME)      
 
       if ( selectedTheme == 'light') {
-        document.documentElement.setAttribute("data-theme", "dark");
-        let selectedTheme = 'dark'
-        localStorage.setItem(LS_THEME, selectedTheme)
+        selectedTheme = 'dark'
+        
      
       } else {
-        document.documentElement.setAttribute("data-theme", "light");
-        let selectedTheme = 'light'
-        localStorage.setItem(LS_THEME, selectedTheme)
+        selectedTheme = 'light'
+        
       }
-      console.log(selectedTheme)
+      document.documentElement.setAttribute("data-theme", selectedTheme);
+      localStorage.setItem(LS_THEME, selectedTheme)
     })
 
      </script>

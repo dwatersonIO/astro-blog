@@ -204,7 +204,7 @@ p {
 
 .tag {
   color: white;
-  padding: 4px 5px 4px 5px;
+  padding: 4px 8px 4px 8px;
   background-color: var(--text);
   border-radius: 4px;
   text-decoration: none;
