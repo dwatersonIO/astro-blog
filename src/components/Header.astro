@@ -15,20 +15,24 @@
         <li><a href="/tags/">Tags</a></li>
         <li><a href="/react/">React</a></li>
         <li><a href="/javascript/">Javascript</a></li>
-
+        <img id="icon" data-theme-change src="/assets/moon.png" alt=""/> 
       </ul>
-      <button data-theme-change>Color</button>
+      
     </div>
   </nav>
 
   <script>
     const LS_THEME = 'astro.theme'
-    let selectedTheme    
+    let selectedTheme   
+    let icon = document.getElementById("icon")
+    console.log(icon)
     
     if (localStorage.getItem(LS_THEME)) {
       selectedTheme = localStorage.getItem(LS_THEME)
+      icon.src = "/assets/sun.png"
     } else {
       selectedTheme = 'light'
+      icon.src = "/assets/moon.png"
       localStorage.setItem(LS_THEME, selectedTheme)
     }
 
@@ -41,12 +45,12 @@
 
       if ( selectedTheme == 'light') {
         selectedTheme = 'dark'
-        
-     
+        icon.src = "/assets/sun.png"
       } else {
         selectedTheme = 'light'
-        
+        icon.src = "/assets/moon.png"
       }
+      
       document.documentElement.setAttribute("data-theme", selectedTheme);
       localStorage.setItem(LS_THEME, selectedTheme)
     })
@@ -111,5 +115,11 @@
       flex-direction: column;
       justify-content: space-evenly;
     }
+  }
+  
+ #icon {
+  width: 30px;
+  cursor: pointer;
+  margin: 0 1em 0 0
   }
 </style>

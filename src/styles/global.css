@@ -232,3 +232,8 @@ small {
   padding: .5em;
   margin: 0 0 0 0;
 }
+
+.mode {
+  width: 30px;
+  cursor: pointer;
+}
