@@ -25,17 +25,21 @@
     const LS_THEME = 'astro.theme'
     let selectedTheme   
     let icon = document.getElementById("icon")
-    console.log(icon)
     
     if (localStorage.getItem(LS_THEME)) {
       selectedTheme = localStorage.getItem(LS_THEME)
-      icon.src = "/assets/sun.png"
+        if (selectedTheme === "light") {
+          icon.src = "/assets/dark.png"
+        } else {
+          selectedTheme = "dark" 
+          icon.src = "/assets/light.png"        
+        }         
     } else {
-      selectedTheme = 'light'
-      icon.src = "/assets/moon.png"
+      selectedTheme = "light"
       localStorage.setItem(LS_THEME, selectedTheme)
+      icon.src = "/assets/dark.png"
     }
-
+    
     document.documentElement.setAttribute("data-theme", selectedTheme)
 
     const themeChangeButton = document.querySelector('[data-theme-change]')
@@ -45,10 +49,10 @@
 
       if ( selectedTheme == 'light') {
         selectedTheme = 'dark'
-        icon.src = "/assets/sun.png"
+        icon.src = "/assets/light.png"
       } else {
         selectedTheme = 'light'
-        icon.src = "/assets/moon.png"
+        icon.src = "/assets/dark.png"
       }
       
       document.documentElement.setAttribute("data-theme", selectedTheme);
