@@ -13,3 +13,21 @@ const { nameOfTag, selected } = Astro.props;
         </a>
     )
 }
+
+<style>
+.tag {
+    color: white;
+    padding: 2px 5px 3px 5px;
+    font-size: calc(var(--text-size) * .9);
+    background-color: var(--text-col);
+    border-radius: 4px;
+    text-decoration: none;
+    margin-left: 5px;
+ }
+  
+  .tag-selected {
+    background-color: var(--soft-brand);
+    color: white;
+  }
+
+</style>
