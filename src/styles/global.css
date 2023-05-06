@@ -1,32 +1,3 @@
-/* :root {
-  --brand-hue: 236deg;
-  --brand-sat: 100%;
-  --brand-lit: 50%;
-  --brand: hsl(
-    var(--brand-hue) 
-    var(--brand-sat) 
-    var(--brand-lit) 
-  );
-  --soft-brand: hsl(
-    var(--brand-hue) 
-    calc(var(--brand-sat) - 30%) 
-    calc(var(--brand-lit) + 10%)
-  );
-  --dark-brand: hsl(
-    var(--brand-hue) 
-    var(--brand-sat) 
-    calc(var(--brand-lit) - 20%)
-  );
-
-  --trans-brand: hsl(
-    var(--brand-hue) 
-    var(--brand-sat) 
-    calc(var(--brand-lit) / .5)
-  );
-    
-  --bg-high: hsl(272, 37%, 90%);
-  --text: #2c3e50;
-} */
 
 [data-theme="light"] {
   --brand-hue: 236deg;
@@ -55,7 +26,8 @@
   );
     
   --bg-high: hsl(272, 37%, 90%);
-  --text: #2c3e50;
+  --text-col: #2c3e50;
+  --text-size: 1rem;
 }
 
 
@@ -86,7 +58,8 @@
   );
     
   --bg-high: hsl(272, 37%, 90%);
-  --text: #2c3e50;
+  --text-col: #2c3e50;
+  --text-size: 1rem;
 }
 
 *,
@@ -100,11 +73,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  background: white;
-  margin-top: .5em;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   list-style: none;
   text-decoration: none;
 }
@@ -117,7 +87,7 @@ hr {
 h1 {
   color: var(--brand);
   font-weight: 600;
-  font-size: 1.3em;
+  font-size: calc(var(--text-size) * 1.2)
 }
 
 h1 a {
@@ -130,25 +100,24 @@ h1 a:hover {
   text-decoration: none;
 }
 
-/* h2 = blog subheading */
 h2 {
   margin: .8em .5em .2em 0;
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: calc(var(--text-size) * .9); 
+
+  
 }
+
 
 /* h3 used for description field */
 h3 {
   /* padding-top: .5em; */
   font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 1em;
   font-weight: 500;
-  margin-top: .5em;
-  color: white;
-  border-radius: 3px;
   padding: .4em;
-  color: var(--text);
-  background-color: var(--bg-high);
+  color: var(--text-col);
+  font-size: calc(var(--text-size) * .8)
+
 }
 
 
@@ -173,39 +142,25 @@ p {
 }
 
 
-.tag-list {
-  display: flex;
-  min-height: 20px;
-  /* Allow tags to overflow to next line  */
-  flex-wrap: wrap;
-  align-self: center;
-  /* Align items to left or if in columns to the top */
-  justify-content: flex-start;
-  gap: .2em;
-
-}
-
 /* used for col background of header component and tag-list underneath header */
-.tag-list-header {
-  background-color: var(--bg-high);
-  padding: 0em 0 1em .5em;
-  border-radius: 0 0 5px 5px;
+
+.post-details {
+  display: flex;  
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: .5em .5em 0 0em
 }
 
-.tag-outline {
-  padding: 4px 8px 4px 8px;
-  border-radius: 4px;
-  border: 1px solid var(--brand);
-  text-decoration: none;
-  margin-right: 4px;
-  font-weight: 400;
-  font-size: 1rem;
+.post-date {
+  font-size: small;
+  margin-right: .5em;
 }
 
 .tag {
   color: white;
   padding: 4px 8px 4px 8px;
-  background-color: var(--text);
+  background-color: var(--text-col);
   border-radius: 4px;
   text-decoration: none;
   margin-left: 5px;
@@ -226,6 +181,8 @@ small {
   font-size: .9em;
 
 }
+
+
 
 .astro-code {
   border-radius: 7px;

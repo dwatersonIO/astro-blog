@@ -3,27 +3,74 @@ const { posts } = Astro.props;
 ---
 <section class="container">
 {
+   
     posts.slice(0, 100).map((post) => (
-           <h1>
-                <a href={post.url}>{post.frontmatter.title}</a>
-            </h1>
-            <span class="tag-list ">
-                <small>
+    <div class="posts-preview">
+        <div>
+            <h1 class="post-title"><a href={post.url}>{post.frontmatter.title}</a></h1>
+                
+                <span class="post-date">
                     {new Date(post.frontmatter.date).toLocaleDateString()}
+                </span>
 
-                    {post.frontmatter.tags.map((tag) => (
-                        <span class="tag-outline">{tag + " "}</span>
-                    ))}
-                </small>
-            </span>
+                {post.frontmatter.tags.map((tag) => (
+                    <span class="post-tags">{tag + " "}</span>
+                ))}
+        </div>
 
+        <div class="post-description">
             <h3>
                 {post.frontmatter.description}{" "}
                 <a class="read-more" href={post.url}>
                     Read more...
                 </a>
             </h3>
-            <hr />
+        </div>
+    </div>    
     ))
-}
+
+}     
 </section>
+
+<style> 
+
+section {
+    padding-left: 1em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.posts-preview {
+    border:  2px solid  var(--brand);
+    border-radius: .5em;
+    padding-left: .5em;
+
+}
+.post-title {
+    margin-top: .3em;
+}
+.post-date {
+    font-size: calc(var(--text-size) * .7);
+}
+
+.post-tags {
+  padding: 2px 5px 3px 5px;
+  border-radius: 4px;
+  border: 1px solid var(--brand);
+  text-decoration: none;
+  font-size: calc(var(--text-size) *.7 );
+  margin-right: calc(var(--text-size) * .3);
+}
+
+
+@media (max-width: 600px) {
+.container {
+    grid-template-columns: 1fr;
+}
+}
+</style>
+

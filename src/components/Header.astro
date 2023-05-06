@@ -1,5 +1,5 @@
 ---
-
+import "../styles/global.css";
 
 ---
 
@@ -17,7 +17,6 @@
         <li><a href="/javascript/">Javascript</a></li>
         <img id="icon" data-theme-change src="/assets/moon.png" alt=""/> 
       </ul>
-      
     </div>
   </nav>
 
@@ -26,21 +25,21 @@
     let selectedTheme   
     let icon = document.getElementById("icon")
     
-    if (localStorage.getItem(LS_THEME)) {
-      selectedTheme = localStorage.getItem(LS_THEME)
-        if (selectedTheme === "light") {
-          icon.src = "/assets/dark.png"
+    if (localStorage.getItem(LS_THEME)) {   // Check if a theme already in local storage
+      selectedTheme = localStorage.getItem(LS_THEME)   // Set selectedTheme to local storage value
+        if (selectedTheme === "light") {  
+          icon.src = "/assets/dark.png"   // if theme is light then icon should be to change to dark
         } else {
           selectedTheme = "dark" 
-          icon.src = "/assets/light.png"        
+          icon.src = "/assets/light.png"   // if theme is dark then icon should be to change to light   
         }         
     } else {
-      selectedTheme = "light"
+      selectedTheme = "light"   // if no theme in local storage default to light theme
       localStorage.setItem(LS_THEME, selectedTheme)
       icon.src = "/assets/dark.png"
     }
     
-    document.documentElement.setAttribute("data-theme", selectedTheme)
+    document.documentElement.setAttribute("data-theme", selectedTheme) 
 
     const themeChangeButton = document.querySelector('[data-theme-change]')
     
@@ -80,17 +79,15 @@
   }
 
   .brand-title a {
-    font-family: Arial, Helvetica, sans-serif;
     color: var(--brand);
-    flex-direction: column;
-    align-items: left;
-    font-size: 2.3em;
+    font-size: calc(var(--text-size) * 1.8);
     padding: 0 0 0 0.4em;
     text-decoration: none;
   }
 
   .nav-list ul {
     display: flex;
+    align-items: center;
   }
 
   .nav-list li {
@@ -101,7 +98,7 @@
     text-decoration: none;
     color: var(--brand);
     padding: 0 0.8em 0 0;
-    font-size: large;
+    font-size: calc(var(--text-size) * 1.1);
     font-weight: 600;
   }
 
@@ -113,17 +110,24 @@
     color: var(--soft-brand);
   }
 
-  @media (max-width: 600px) {
-    .navbar {
-      min-height: 8vh;
-      flex-direction: column;
-      justify-content: space-evenly;
-    }
-  }
+
   
  #icon {
   width: 30px;
   cursor: pointer;
   margin: 0 1em 0 0
   }
+
+  @media (max-width: 600px) {
+  .navbar {
+    min-height: 8vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .nav-list ul {
+    flex-direction: column;
+  }
+}
+
 </style>
