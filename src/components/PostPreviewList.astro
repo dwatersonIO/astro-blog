@@ -39,16 +39,17 @@ const { posts } = Astro.props;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
-}
+    padding: 10px 10px 10px 10px;
+    }
 
 .posts-preview {
-    border:  2px solid  var(--brand);
-    border-radius: .5em;
-    padding-left: .5em;
-
+    /* border:  2px solid  var(--brand);*/
+    border-radius: .5em; 
+    padding: 10px 10px 10px 10px;
+    background-color: #f2f2f2; 
 }
 .post-title {
-    margin-top: .3em;
+    margin-top: 0;
 }
 .post-date {
     font-size: calc(var(--text-size) * .7);
@@ -63,6 +64,9 @@ const { posts } = Astro.props;
   margin-right: calc(var(--text-size) * .3);
 }
 
+.post-description {
+    padding: 0;
+}
 
 @media (max-width: 600px) {
 .container {
