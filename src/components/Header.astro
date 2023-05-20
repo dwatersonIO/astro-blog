@@ -19,7 +19,7 @@ import "../styles/global.css";
     </div>
   </nav>
 
-  <script>
+  <script is:inline>
     const LS_THEME = 'astro.theme'
     let selectedTheme   
     let icon = document.getElementById("icon")
@@ -57,7 +57,7 @@ import "../styles/global.css";
       localStorage.setItem(LS_THEME, selectedTheme)
     })
 
-     </script>
+  </script>
     
 
 </header>
@@ -74,13 +74,11 @@ import "../styles/global.css";
     /* centre text vertically */
     align-items: center;
     border-radius: 5px 5px 0 0;
-    background-color:  hsla(210deg, 55%, 92%, 0.85);
   }
 
   .brand-title a {
     color: var(--brand);
     font-size: calc(var(--text-size) * 1.8);
-    padding: 0 0 0 0.4em;
     text-decoration: none;
   }
 
