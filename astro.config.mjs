@@ -21,5 +21,6 @@ export default defineConfig({
       wrap: true
     }
   },
-  integrations: [mdx(), react(), image()]
+  integrations: [mdx(), react()]
+  // integrations: [mdx(), react(), image()]
 });
