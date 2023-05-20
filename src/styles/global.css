@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 [data-theme="light"] {
   --brand-hue: 215deg;
@@ -76,9 +77,10 @@
   margin: 0;
   padding: 0;
   background-color: inherit;
+  
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -90,6 +92,12 @@ body {
   background-color: var(--bg-col);
   line-height: 1.5;
   
+  
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
 hr {
