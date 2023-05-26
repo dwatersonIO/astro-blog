@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: Make a Basic CRUD App with Django
+title: A Basic CRUD App with Django
 author: David Waterson
 date: 2022-12-22
 category:
@@ -17,9 +17,6 @@ First step is to create a basic model. When you are starting out keep to just on
 ```python
 from django.db import models
 from django.utils import timezone
-
-# Create your models here.
-
 
 class Note(models.Model):
     text=models.CharField(max_length=255)

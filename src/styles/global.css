@@ -27,9 +27,10 @@
   );
     
   --bg-col: hsl(0, 0%, 95%);
+  --bg-col-fade: hsl(0, 2%, 90%);
   --text-col-pil: #f2f2f2;
   --bg-col-pil: #25395C;
-  --col-read-more: #ea7166;
+  --text-col-highlight: #ea7166;
   --text-col: #222222;
   --text-size: 1rem;
 }
@@ -62,9 +63,10 @@
   );
     
   --bg-col: hsl(0, 0%, 13%);
+  --bg-col-fade: hsl(0, 2%, 17%);
   --bg-col-pil: #f2f2f2;
   --text-col-pil: #25395c;
-  --col-read-more: #ea7166;
+  --text-col-highlight: #ea7166;
   --text-col: #f2f2f2f2;
   --text-size: 1rem;
   --bg-col-snippet: #f2f2f2;
@@ -100,9 +102,12 @@ img, picture, video, canvas, svg {
   max-width: 100%;
 }
 
-hr {
-  margin-top: 2em;
-  margin-bottom: .5em;
+p > a:link {
+  color: grey;
+}
+
+P > a:visited {
+  color: grey;
 }
 
 h1 {
@@ -123,9 +128,10 @@ h1 a:hover {
 }
 
 h2 {
-  margin: .8em .5em .2em 0;
-  font-weight: 600;
-  font-size: calc(var(--text-size) * .9); 
+  margin: .5rem 0 0 0; 
+  font-weight: 400;
+  font-size: calc(var(--text-size) * 1.1); 
+  color: var(--brand);
 
   
 }
@@ -150,9 +156,9 @@ h4 {
 }
 
 a.read-more {
-  color: var(--col-read-more);
-  font-weight: 600;
-  font-size: 1em;
+  color: var(--text-col-highlight);
+  font-weight: 400;
+  font-size: calc(var(--text-size) * .7);
 }
 
 
