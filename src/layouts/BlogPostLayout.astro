@@ -4,6 +4,10 @@ import TagsFilter from "../components/TagsFilter.astro";
 
 const { frontmatter } = Astro.props;
 ---
+<!-- TODO Here is my comment -->
+<!-- ! Here is my comment -->
+<?-- ! Here is my comment -->
+<!-- * Here is my comment -->
 
 <BaseLayout>
   <TagsFilter />
@@ -12,7 +16,7 @@ const { frontmatter } = Astro.props;
     <div class="post-details-container">
 
       <div class="post-title">
-        <h1>{frontmatter.title}</h1>
+        <h2>{frontmatter.title}</h2>
       </div>
 
       <div class="post-date">

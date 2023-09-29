@@ -8,6 +8,7 @@ const posts = await Astro.glob("./posts/*.mdx"); // returns an array of posts fr
 posts.sort(
   (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
 );
+console.log(posts.json)
 ---
 
 <BaseLayout title="Advisor Wanted">
