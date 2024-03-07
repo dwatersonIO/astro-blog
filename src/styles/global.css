@@ -111,7 +111,7 @@ P > a:visited {
 }
 
 h1 {
-  color: var(--brand);
+  color: var(--text-col);
   font-weight: 600;
   font-size: calc(var(--text-size) * 1.2);
   line-height: 1.2; 
@@ -128,10 +128,11 @@ h1 a:hover {
 }
 
 h2 {
-  margin: .5rem 0 0 0; 
-  font-weight: 400;
-  font-size: calc(var(--text-size) * 1.1); 
-  color: var(--brand);
+  margin: 1rem 0 0 0; 
+  font-weight: 500;
+  font-size: calc(var(--text-size) * 1); 
+  color: var(--text-col);
+  font-style: italic;
 
   
 }
@@ -166,6 +167,7 @@ a.read-more {
 p {
   padding: .5em 0 .2em 0;
   margin: 0 0 0 0;
+  font-size: calc(var(--text-size) * .9)
 }
 
 
@@ -185,7 +187,6 @@ p {
 }
 
 
-
 .selectable-tag:hover {
   background-color: var(--brand);
 }
@@ -198,9 +199,8 @@ small {
 
 
 .astro-code {
+  margin-top: .5em;
   border-radius: 7px;
   padding: .5em;
-
-
 }
 

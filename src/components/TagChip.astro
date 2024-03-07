@@ -8,7 +8,7 @@ const { nameOfTag, selected } = Astro.props;
             {nameOfTag}
         </a>
     ) : (
-        <a class="tag selectable-tag" href={`/tags/${nameOfTag}`}>
+        <a class="tag tag-selectable" href={`/tags/${nameOfTag}`}>
             {nameOfTag}
         </a>
     )
@@ -22,12 +22,13 @@ const { nameOfTag, selected } = Astro.props;
     background-color: var(--bg-col-pil);
     border-radius: 4px;
     text-decoration: none;
-
  }
   
-  .tag-selected {
+ .tag-selected {
     background-color: var(--brand);
     color: var(--text-col-pil);
   }
-
+.tag-selectable:hover {
+  background-color: var(--soft-brand);
+}
 </style>
