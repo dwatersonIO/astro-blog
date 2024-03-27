@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: How to use Django Forms
+author: David Waterson
+date: 2024-03-27
+category:
+tags:
+- django
+description: There are two main ways we can use Django forms to send data to the back end. Learn both of them
+image: '../../public/punct.png'
+
+---
+
+{ frontmatter.description }
+In our example we will use a form to process a data query or search. The simplest way to to use a basic HTML form as shown below. The `name` attribute is important since it will be references in our Django view
+
+## First Way: Use a simple HTML form
+```html
+<!-- template -->
+<input  type="search" placeholder="Search notes..." name="searched">
+<button type="submit">Search</button> 
+```
+Then setup your logic in the `views.py` form
+
+```python
+# views.py
+if request.method == "POST":
+    searched = request.POST['searched'] # searched is the name attribute of the HTML form
+    # In this example we will filter the Note.text database field for the search text
+    notes = Note.objects.filter(text__contains=searched)
+    return render(request, 'notes/search_note.html', {"searched":searched, "notes": notes})
+```
+
+
+## Second and Better Way
+
+Use the Django form functionality to refer to the form in the template and then submit the data to the backend. This option does not depend on using the `name` attribute.
+```python
+# template
+<form method="post" name="search_text" action="{% url 'search_note' %}">
+    {% csrf_token %}
+    {{ form.text }}
+    {{ form.type }}
+    <button type="submit">Search</button> 
+</form>
+```
+Then setup the logic to process the form. 
+
+```python
+# views.py
+def search_note(request):
+    if request.method == "POST":
+        form=NoteForm(request.POST) # create an instance of the form sent
+        if form.is_valid():
+            searched=form.cleaned_data["text"]
+            notes = Note.objects.filter(text__contains=searched)	
+
+    else: # if this was a GET request then load empty form and send all data to the template
+        notes = Note.objects.all().order_by('-date_created')
+        form=NoteForm()
+
+return render(request, 'notes/search_note.html', {"form": form, "notes": notes})
+```
