@@ -1,17 +1,17 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
-title: Import a CSV file to a Database in Django
+title: Django Models Cheat Sheet
 author: David Waterson
-date: 2022-12-07
+date: 2024-03-31
 category:
 tags:
 - django
-description: Its common to have data from another source in csv format that you want to process with Django. But perhaps you do not want all the columns. 
-image: '../../public/punct.png'
+description: Everything to know about Django Models 
+image: 
 
 ---
 
-## How to use the Choice field
+## How to use the choices field
 
 ```python
 class Note(models.Model):
@@ -23,8 +23,6 @@ class Note(models.Model):
     ('Exercise', "Exercise"),
     ))
     date_created = models.DateTimeField(auto_now=True)
-
     def __str__(self):
-        return self.text
 ```
 

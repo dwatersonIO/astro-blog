@@ -61,3 +61,25 @@ def search_note(request):
 
 return render(request, 'notes/search_note.html', {"form": form, "notes": notes})
 ```
+
+## Searching and Model forms
+
+When deciding on a form to have the enter data into a form it seems best to use the ModelForm class. This model form will then use the same fields as specified in the model which is usually what you want.
+   I did not find this the best option when using forms for searchng thought. This is because you may have required fields in the model but when the user is searching the database you may not want to form him to enter something for that search.\
+   \
+   But in my example shown below I only wanted the user to have to search on the Summary field. I did not want to force the user to have to enter or select a search data in the Tags or Text fields. After checking the Django documentation on how to modify the ModelForm to do this I concluded in the end a simpler solution for this use case was to set up a search form called SearchForm separately as shown below. Obviously you then need to update your 'views.py' and template accordinging.
+
+```python
+from django import forms
+from django.forms import ModelForm
+from notes.models import Note
+
+class NoteForm(ModelForm):
+    class Meta:
+        model = Note
+        fields = ['summary','text','tags']
+
+class SearchForm(forms.Form):
+    search_summary = forms.CharField(label="Search for...", max_length=128)
+```
+    
