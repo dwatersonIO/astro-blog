@@ -1,0 +1,13 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: Combine HTMX with Djanbo
+slug: django-htmx
+author: David Waterson
+date: 2024-04-14
+category:
+tags:
+- django
+description: How to integrate htmx-django with your project 
+---
+## Introduction
+

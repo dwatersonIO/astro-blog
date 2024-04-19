@@ -65,21 +65,59 @@ return render(request, 'notes/search_note.html', {"form": form, "notes": notes})
 ## Searching and Model forms
 
 When deciding on a form to have the enter data into a form it seems best to use the ModelForm class. This model form will then use the same fields as specified in the model which is usually what you want.
-   I did not find this the best option when using forms for searchng thought. This is because you may have required fields in the model but when the user is searching the database you may not want to form him to enter something for that search.\
-   \
-   But in my example shown below I only wanted the user to have to search on the Summary field. I did not want to force the user to have to enter or select a search data in the Tags or Text fields. After checking the Django documentation on how to modify the ModelForm to do this I concluded in the end a simpler solution for this use case was to set up a search form called SearchForm separately as shown below. Obviously you then need to update your 'views.py' and template accordinging.
+
+The Model form will have fields that are required for data entry. But for searching you may not wish to force the user to search on every field. So in this case it is I created another form for searching only.
+
+
+But in my example shown below I only wanted the user to have to search on the Summary field. I did not want to force the user to have to enter or select a search data in the Tags or Text fields. After checking the Django documentation on how to modify the ModelForm to do this I concluded in the end a simpler solution for this use case was to set up a search form called NoteSearchForm separately as shown below. Obviously you then need to update your 'views.py' accordingly.
 
 ```python
 from django import forms
 from django.forms import ModelForm
-from notes.models import Note
+from notes.models import Note, Tag
 
 class NoteForm(ModelForm):
     class Meta:
         model = Note
         fields = ['summary','text','tags']
+        widgets = {
+            'tags': forms.CheckboxSelectMultiple 
+        }
 
-class SearchForm(forms.Form):
-    search_summary = forms.CharField(label="Search for...", max_length=128)
+class NoteSearchForm(forms.Form):
+    summary = forms.CharField(required=False)
+    text = forms.CharField(required=False)
+    tags = forms.ModelMultipleChoiceField(queryset=Tag.objects.all(), required=False, widget=forms.CheckboxSelectMultiple) 
 ```
     
+Now the ```views.py``` will look like this:
+```python
+def search_note(request):
+	if request.method == 'POST':
+
+		form=NoteSearchForm(request.POST)
+		
+		if form.is_valid():
+			summary=form.cleaned_data["summary"]
+			text = form.cleaned_data["text"]
+			tags = form.cleaned_data["tags"]
+
+		# Start with an empty queryset
+		notes = Note.objects.all()
+
+		# Filter based on submitted data
+		if summary:
+			notes = notes.filter(summary__icontains=summary)
+		if text:
+			notes = notes.filter(text__icontains=text)
+		if tags:
+			notes = notes.filter(tags__in=tags)
+			
+		form=NoteSearchForm()	
+
+	else:
+		notes = Note.objects.all().order_by('-date_created')
+		form=NoteSearchForm()
+		
+	return render(request, 'notes/search_note.html', {"form": form, "notes": notes})
+```
