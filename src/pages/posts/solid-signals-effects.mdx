@@ -27,7 +27,7 @@ function Counter() {
 ```
 ## Effects
 
-Sometimes you will want a signal to be used in in more than one place. For example imagine I wanted to use the `count()` getter in another place in my code. For this we can implement `createEffect`. This is needed because the component only renders once. So `createEffect` will create and observable and will trigger what is called a side effect.
+Sometimes you will want a signal to be used in  more than one place. For example imagine I wanted to use the `count()` getter in another place in my code. For this we can implement `createEffect`. This is needed because the component only renders once. So `createEffect` will create an observable and will trigger what is called a side effect.
 
 In example below we want to update `count()` in the console also. For this we need to use `createEffect` as shown below:
 
