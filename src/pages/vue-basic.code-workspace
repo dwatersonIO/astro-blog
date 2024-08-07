@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../vue-basic"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "vue-basic"
+	}
+}
