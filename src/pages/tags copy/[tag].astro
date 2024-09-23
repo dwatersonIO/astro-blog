@@ -1,0 +1,48 @@
+---
+import BaseLayout from "./../../layouts/BaseLayout.astro";
+import PostPreviewList from "./../../components/PostPreviewList.astro";
+import TagsFilter from "./../../components/TagsFilter.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../posts/*.mdx"); // returns an array of posts from location specified
+
+  const allTags = new Set();
+
+  // fill new set allTags with all tags in md files
+  allPosts.map((post) => {
+    post.frontmatter.tags &&
+      post.frontmatter.tags.map((tag) => allTags.add(tag.toLowerCase()));
+  });
+
+  // convert Set to Array since need to filter them
+  return Array.from(allTags).flatMap((tag) => {
+    const UnsortedfilteredPosts = allPosts.filter(
+      (post) => post.frontmatter.tags.includes(tag) // tag select is a variable passed in the url.
+    );
+
+    const filteredPosts = UnsortedfilteredPosts.sort(
+      (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+    );
+
+    // return the filtered array (posts that have selected tag) and also the tag variable itself
+    return filteredPosts.flatMap((post) => ({
+      params: { tag },
+      props: { filteredPosts },
+    }));
+  });
+}
+
+const { tag } = Astro.params;
+const { filteredPosts } = Astro.props;
+---
+
+<BaseLayout title="All Posts">
+  <TagsFilter selectedTag={tag} />
+  <PostPreviewList posts={filteredPosts} />
+</BaseLayout>
+
+<style>
+  ul {
+    list-style-type: none;
+  }
+</style>
