@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PostPreviewList from "../components/PostPreviewList.astro";
+import TagsFilter from "../components/TagsFilter.astro";
+import { PaginateFunction } from "astro";
+
+const posts = await Astro.glob("./posts/*.mdx"); // returns an array of posts from location specified
+posts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
+console.log(posts.json)
+---
+
+<BaseLayout title="Advisor Wanted">
+  <TagsFilter />
+  <div>
+    <PostPreviewList posts={posts} />
+  </div>
+
+
+</BaseLayout>

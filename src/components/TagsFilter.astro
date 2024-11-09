@@ -1,0 +1,39 @@
+---
+import TagChip from "./TagChip.astro";
+
+const allPosts = await Astro.glob("../pages/posts/*.mdx"); // returns an array of posts from location specified
+
+const alltagsSet = new Set();
+
+allPosts.map((post) => {
+    post.frontmatter.tags &&
+        post.frontmatter.tags.map((tag) => alltagsSet.add(tag.toLowerCase()));
+});
+
+const allTags = Array.from(alltagsSet);
+
+const { selectedTag } = Astro.props;
+---
+
+<div class="tag-list-header">
+    {
+        allTags.map((tag) => (
+        <div>    
+        <TagChip nameOfTag={tag} selected={tag === selectedTag} />
+        </div>
+        ))
+    }
+</div>
+
+<style>
+
+.tag-list-header {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 1rem; 
+  gap: 5px;
+  margin-bottom: 20px;
+  
+}
+
+</style>
